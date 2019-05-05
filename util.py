@@ -27,7 +27,7 @@ def tf_tanh(x):
 
 
 def tf_dot(x, y):
-    return tf.reduce_sum(x * y, axis=1, keepdims=True)
+    return tf.reduce_sum(x * y, axis=1, keepdims=True)#按行相加，保持维度特性
 
 def tf_norm(x):
     return tf.norm(x, axis = 1, keepdims=True)
