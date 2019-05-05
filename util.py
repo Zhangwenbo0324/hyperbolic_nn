@@ -19,15 +19,15 @@ def tf_project_hyp_vecs(x, c):
 
 # Real x, not vector!
 def tf_atanh(x):
-    return tf.atanh(tf.minimum(x, 1. - EPS)) # Only works for positive real x.
+    return tf.atanh(tf.minimum(x, 1. - EPS)) # Only works for positive real x.    #tf.minimum Returns the min of x and y element-wise
 
 # Real x, not vector!
 def tf_tanh(x):
-   return tf.tanh(tf.minimum(tf.maximum(x, -MAX_TANH_ARG), MAX_TANH_ARG))
-
+   return tf.tanh(tf.minimum(tf.maximum(x, -MAX_TANH_ARG), MAX_TANH_ARG))  
+# #对应文章中arguments of the tanh function are clipped between -+15 to avoid numerical error
 
 def tf_dot(x, y):
-    return tf.reduce_sum(x * y, axis=1, keepdims=True)#按行相加，保持维度特性
+    return tf.reduce_sum(x * y, axis=1, keepdims=True)   #按行相加，保持维度特性
 
 def tf_norm(x):
     return tf.norm(x, axis = 1, keepdims=True)
